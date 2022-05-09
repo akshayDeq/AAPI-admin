@@ -3,7 +3,7 @@ import { globalStyles } from "../Style/globalStyles";
 
 const TransactionFilter = [
   <TextInput label="transaction Id" source="transactionId" />,
-  <TextInput label="First Name" source="member.first_name" />,
+  <TextInput label="First Name" source="name" />,
   <TextInput label="Amount" source="amount" />,
 ];
 
