@@ -9,10 +9,11 @@ const TransactionShow = (props) => {
       <SimpleShowLayout>
         <CustomTextField label="Transaction ID" source="transactionId" />
         <CustomTextField label="Transaction Date" source="transactionDate" />
-        <CustomTextField label="Member Name" source="memberName" />
-        <CustomTextField label="Member Type" source="memberType" />
-        <CustomTextField label="Member Subtype" source="memberSubType" />
-        <CustomTextField label="Amount" source="amount" />
+        <CustomTextField label="First Name" source="first_name" />
+        <CustomTextField label="Last Name" source="last_name" />
+        <CustomTextField label="Member Type" source="member_type" />
+        <CustomTextField label="Member Subtype" source="member_sub_type" />
+        <CustomTextField label="Amount($)" source="amount" />
       </SimpleShowLayout>
     </ShowView>
   );
