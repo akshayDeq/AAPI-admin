@@ -1,4 +1,3 @@
-// import AdminCreate from "./AdminCreate";
 import AdminEdit from "./AdminEdit";
 import AdminList from "./AdminList";
 import AdminCreate from "./AdminCreate";
