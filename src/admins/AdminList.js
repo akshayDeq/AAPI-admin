@@ -10,7 +10,6 @@ import {
 import { globalStyles } from "../Style/globalStyles";
 
 const AdminFilter = [
-  <TextInput label="Search" source="q" alwaysOn />,
   <TextInput label="Id" source="id" />,
   <TextInput label="Email" source="email" />,
   <TextInput label="Status" source="status" defaultValue="active" />,
@@ -29,12 +28,12 @@ const AdminList = (props) => {
       >
         <TextField label="Id" source="id" />
         <TextField label="Email" source="email" />
-        <TextField label="Current Sign In" source="currentSignIn" />
-        <TextField label="Sign In Count" source="signInCount" />
+        <TextField label="Current Sign In" source="current_signin" />
+        <TextField label="Sign In Count" source="signin_count" />
         <DateField label="Created On" format="dd/MM/yyyy" source="createdAt" />
         <TextField label="Status" source="status" />
-        <EditButton label="" className={classes.button} basePath="/admins" />
-        <ShowButton label="" className={classes.button} basePath="/admins" />
+        <EditButton label="" className={classes.button} basePath="/admin" />
+        <ShowButton label="" className={classes.button} basePath="/admin" />
       </Datagrid>
     </List>
   );

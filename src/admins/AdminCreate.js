@@ -12,8 +12,14 @@ const AdminCreate = (props) => {
     <Create {...props} title={"Create New Admin"} component="div">
       <SimpleForm>
         <TextInput validate={required()} label="Email" source="email" />
-        <TextInput validate={required()} label="Password" source="password" />
         <TextInput
+          type="password"
+          validate={required()}
+          label="Password"
+          source="password"
+        />
+        <TextInput
+          type="password"
           validate={required()}
           label="Confirm Password"
           source="confirmPassword"

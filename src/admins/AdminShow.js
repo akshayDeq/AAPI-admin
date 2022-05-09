@@ -7,8 +7,8 @@ const AdminShow = (props) => {
   return (
     <ShowView {...controllerProps}>
       <SimpleShowLayout>
+        <CustomTextField label="ID" source="id" />
         <CustomTextField label="Email" source="email" />
-        <CustomTextField label="Username" source="username" />
         <CustomTextField label="Created On" source="createdAt" />
         <CustomTextField label="Status" source="status" />
       </SimpleShowLayout>
