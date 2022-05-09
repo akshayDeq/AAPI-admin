@@ -9,7 +9,6 @@ import {
 import { globalStyles } from "../Style/globalStyles";
 
 const MemberFilter = [
-  <TextInput label="Search" source="q" alwaysOn />,
   <TextInput label="Id" source="id" />,
   <TextInput label="Email" source="email" />,
   <TextInput label="Status" source="status" defaultValue="active" />,
@@ -32,14 +31,11 @@ const MemberList = (props) => {
         rowClick="show"
       >
         <TextField label="Id" source="id" />
-        <TextField label="Email" source="email" />
-        <TextField label="Username" source="username" />
-        <TextField label="Current Sign In" source="currentSignIn" />
-        <TextField label="Sign In Count" source="signInCount" />
+        <TextField label="Email" source="primary_email_address" />
         <TextField label="Created On" source="createdAt" />
         <TextField label="Status" source="status" />
-        <EditButton label="" className={classes.button} basePath="/members" />
-        <ShowButton label="" className={classes.button} basePath="/members" />
+        <EditButton label="" className={classes.button} basePath="/member" />
+        <ShowButton label="" className={classes.button} basePath="/member" />
       </Datagrid>
     </List>
   );

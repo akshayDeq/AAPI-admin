@@ -22,43 +22,46 @@ const MemberShow = (props) => {
         <Tab label="Personal Information">
           <CustomTextField label="ID" source="id" />
           <CustomTextField label="Username" source="username" />
-          <CustomTextField label="Email" source="email" />
-          <CustomTextField label="Member Type" source="memberType" />
-          <CustomTextField label="Member Subtype" source="memberSubType" />
-          <CustomTextField label="Primary Degree" source="primaryDegree" />
-          <CustomTextField label="Primary Specialty" source="primarySpecilty" />
+          <CustomTextField label="Email" source="primary_email_address" />
+          <CustomTextField label="Member Type" source="member_type" />
+          <CustomTextField label="Member Subtype" source="member_sub_type" />
+          <CustomTextField label="Primary Degree" source="primary_degree" />
+          <CustomTextField
+            label="Primary Specialty"
+            source="primary_specialty"
+          />
         </Tab>
 
         <Tab label="Address Details">
-          <ArrayField label="" fullWidth source="addressDetails">
+          <ArrayField label="" fullwidth source="address">
             <Datagrid classes={{ headerCell: classes.headerCell }}>
-              <TextField source="addressType" />
+              <TextField source="address_type" />
               <TextField source="city" />
               <TextField source="state" />
-              <TextField source="zipCode" />
+              <TextField source="zip_code" />
               <TextField source="country" />
-              <BooleanField source="isPrimary" />
+              <BooleanField source="is_primary_address" />
             </Datagrid>
           </ArrayField>
         </Tab>
 
         <Tab label="Phone Details">
-          <ArrayField label="" fullWidth source="phoneDetails">
+          <ArrayField label="" fullwidth source="phone">
             <Datagrid classes={{ headerCell: classes.headerCell }}>
-              <TextField source="phoneType" />
-              <TextField source="phoneNumber" />
+              <TextField source="phone_type" />
+              <TextField source="phone_number" />
               <TextField source="extension" />
             </Datagrid>
           </ArrayField>
         </Tab>
 
         <Tab label="Education Details">
-          <ArrayField label="" fullWidth source="educationDetails">
+          <ArrayField label="" fullwidth source="education">
             <Datagrid classes={{ headerCell: classes.headerCell }}>
               <TextField source="degree" />
-              <TextField source="medicalSchoolName" />
-              <TextField source="startYear" />
-              <TextField source="endYear" />
+              <TextField source="medical_school_name" />
+              <TextField source="medical_school_start_year" />
+              <TextField source="medical_school_end_year" />
             </Datagrid>
           </ArrayField>
         </Tab>
