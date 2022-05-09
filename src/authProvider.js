@@ -21,7 +21,6 @@ const authProvider = {
       })
       .then(({ token }) => {
         const decodedToken = decodeJwt(token);
-        console.log(decodedToken);
         localStorage.setItem("token", token);
         localStorage.setItem("role", decodedToken.role);
       });
