@@ -1,5 +1,5 @@
 import React from "react";
-import { Admin, Resource, AppBar, Layout, Sidebar } from "react-admin";
+import { Admin, Resource, AppBar, Layout, Sidebar, Login } from "react-admin";
 import members from "./members";
 import admins from "./admins";
 import transactions from "./transactions";
@@ -7,6 +7,7 @@ import dataProvider from "./dataProvider";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import { green } from "@mui/material/colors";
+import authProvider from "./authProvider";
 
 const useStyles = makeStyles({
   title: {
@@ -96,12 +97,23 @@ const theme = {
   },
 };
 
+const LoginPage = (props) => {
+  const classes = useStyles();
+  return <Login classes={classes} backgroundImage="" {...props} />;
+};
+
 function App() {
   return (
-    <Admin layout={MyLayout} theme={theme} dataProvider={dataProvider}>
-      <Resource name="members" {...members} />
-      <Resource name="admins" {...admins} />
-      <Resource name="transactions" {...transactions} />
+    <Admin
+      layout={MyLayout}
+      loginPage={LoginPage}
+      authProvider={authProvider}
+      theme={theme}
+      dataProvider={dataProvider}
+    >
+      <Resource name="member" {...members} />
+      <Resource name="admin" {...admins} />
+      <Resource name="transaction" {...transactions} />
     </Admin>
   );
 }
