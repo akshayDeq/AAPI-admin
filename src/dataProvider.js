@@ -140,16 +140,11 @@ const dataProvider = {
 
   update: (resource, params) => {
     const url = `${apiUrl}/${resource}/${params.id}`;
+
     let dataObj = {};
-    if (resource === "member") {
-      dataObj = { name: params.data.category.name };
-      console.log(params.data.category.name);
-    } else {
-      dataObj = {
-        name: params.data.modale.name,
-        category: params.data.modale.category._id,
-      };
-    }
+
+    dataObj = { status: params.data.status };
+
     return httpClient(`${url}`, {
       method: "PUT",
       body: JSON.stringify(dataObj),
