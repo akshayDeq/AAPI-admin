@@ -35,6 +35,7 @@ const MyAppBar = (props) => {
         id="react-admin-title"
       />
       <span className={classes.spacer} />
+      {localStorage.getItem("Radmin-email")}
     </AppBar>
   );
 };
@@ -45,6 +46,10 @@ const useSidebarStyles = makeStyles((theme) => ({
       color: "white",
     },
     backgroundColor: "#223269",
+    position: "fixed",
+    top: "5%",
+    height: "95%",
+    zIndex: "100",
     borderRadius: "0 1rem 1rem 0",
   },
 }));
@@ -80,10 +85,15 @@ const theme = {
         margin: "50px",
       },
     },
+    sidebar: {
+      width: 300, // The default value is 240
+      closedWidth: 70, // The default value is 55
+    },
     RaMenuItemLink: {
       root: {
         color: "rgba(255, 255, 255, 1)",
         borderRadius: "0 0.3rem 0 ",
+        marginTop: "4px",
         "&:hover": {
           backgroundColor: green[400],
           color: "rgba(255, 255, 255, 1)",
