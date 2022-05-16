@@ -21,6 +21,7 @@ const authProvider = {
       })
       .then(({ token }) => {
         const decodedToken = decodeJwt(token);
+        localStorage.setItem("Radmin-email", email);
         localStorage.setItem("token", token);
         localStorage.setItem("role", decodedToken.role);
       });
