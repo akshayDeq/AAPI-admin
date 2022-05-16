@@ -2,7 +2,8 @@ import { List, Datagrid, TextField, TextInput, ShowButton } from "react-admin";
 import { globalStyles } from "../Style/globalStyles";
 
 const TransactionFilter = [
-  <TextInput label="transaction Id" source="transactionId" />,
+  <TextInput label="Search" source="q" alwaysOn />,
+  <TextInput label="Transaction ID" source="transactionId" />,
   <TextInput label="First Name" source="name" />,
   <TextInput label="Amount" source="amount" />,
 ];
@@ -17,7 +18,6 @@ const TransactionList = (props) => {
       filters={TransactionFilter}
     >
       <Datagrid
-        rowClick="show"
         source
         classes={{
           headerCell: classes.headerCell,

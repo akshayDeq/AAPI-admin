@@ -5,13 +5,20 @@ import {
   TextInput,
   ShowButton,
   EditButton,
+  SelectInput,
 } from "react-admin";
 import { globalStyles } from "../Style/globalStyles";
 
 const MemberFilter = [
-  <TextInput label="Id" source="id" />,
-  <TextInput label="Email" source="email" />,
-  <TextInput label="Status" source="status" defaultValue="active" />,
+  <TextInput label="Search" source="q" alwaysOn />,
+  <TextInput autoComplete="off" label="ID" source="id" />,
+  <TextInput autoComplete="off" label="Email" source="email" />,
+  <SelectInput
+    label="Status"
+    source="status"
+    choices={[{ name: "Active" }, { name: "Inactive" }]}
+    optionValue="name"
+  />,
 ];
 
 const MemberList = (props) => {
@@ -28,9 +35,8 @@ const MemberList = (props) => {
         classes={{
           headerCell: classes.headerCell,
         }}
-        rowClick="show"
       >
-        <TextField label="Id" source="id" />
+        <TextField label="ID" source="id" />
         <TextField label="Email" source="primary_email_address" />
         <TextField label="Created On" source="createdAt" />
         <TextField label="Status" source="status" />
