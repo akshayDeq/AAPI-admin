@@ -5,7 +5,7 @@ const TransactionFilter = [
   <TextInput label="Search" source="q" alwaysOn />,
   <TextInput label="Transaction ID" source="transactionId" />,
   <TextInput label="First Name" source="name" />,
-  <TextInput label="Amount" source="amount" />,
+  <TextInput type={"number"} label="Amount" source="amount" />,
 ];
 
 const TransactionList = (props) => {
