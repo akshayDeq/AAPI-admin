@@ -59,7 +59,11 @@ const AdminList = (props) => {
         ) : (
           <></>
         )}
-        <ShowButton label="" className={classes.button} basePath="/admin" />
+        {userRole === "super-admin" ? (
+          <ShowButton label="" className={classes.button} basePath="/admin" />
+        ) : (
+          <></>
+        )}
       </Datagrid>
     </List>
   );
