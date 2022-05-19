@@ -89,6 +89,17 @@ const dataProvider = {
       );
     }
 
+    if (resource === "admin" && localStorage.getItem("role") === "admin") {
+      swal({
+        title: "Unauthorised",
+        type: "warning",
+        showCancelButton: false,
+        showConfirmButton: false,
+        timer: 2000,
+      });
+      return Promise.reject();
+    }
+
     return httpClient(`${apiUrl}/${resource}/${params.id}`).then(({ json }) => {
       return { data: json.data };
     });
