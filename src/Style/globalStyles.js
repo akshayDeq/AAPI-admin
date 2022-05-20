@@ -7,7 +7,8 @@ export const globalStyles = makeStyles({
 
   tableMargin: {
     marginTop: "25px",
-    marginLeft: "100px",
+    marginLeft: "20px",
+    marginRight: "20px",
   },
 
   headerCell: {
