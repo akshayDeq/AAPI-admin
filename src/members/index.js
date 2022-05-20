@@ -3,7 +3,7 @@ import MemberList from "./MemberList";
 import MemberShow from "./MemberShow";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 
-const Icon = () => <PeopleAltIcon style={{ color: "white" }} />;
+const Icon = () => <PeopleAltIcon />;
 
 export default {
   list: MemberList,

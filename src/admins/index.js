@@ -4,7 +4,7 @@ import AdminCreate from "./AdminCreate";
 import AdminShow from "./AdminShow.js";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 
-const Icon = () => <AdminPanelSettingsIcon style={{ color: "white" }} />;
+const Icon = () => <AdminPanelSettingsIcon />;
 
 export default {
   list: AdminList,
