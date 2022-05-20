@@ -51,16 +51,26 @@ const AdminList = (props) => {
         <TextField label="ID" source="id" />
         <TextField label="Email" source="email" />
         <TextField label="Current Sign In" source="current_signin" />
-        <TextField label="Sign In Count" source="signin_count" />
+        {/* <TextField label="Sign In Count" source="signin_count" /> */}
         <DateField label="Created On" format="dd/MM/yyyy" source="createdAt" />
         <TextField label="Status" source="status" />
         {userRole === "super-admin" ? (
-          <EditButton label="" className={classes.button} basePath="/admin" />
+          <EditButton
+            width="10%"
+            label=""
+            className={classes.button}
+            basePath="/admin"
+          />
         ) : (
           <></>
         )}
         {userRole === "super-admin" ? (
-          <ShowButton label="" className={classes.button} basePath="/admin" />
+          <ShowButton
+            width="5%"
+            label=""
+            className={classes.button}
+            basePath="/admin"
+          />
         ) : (
           <></>
         )}
