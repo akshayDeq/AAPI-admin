@@ -6,7 +6,7 @@ export const CustomTextField = (props) => {
     <div
       style={{
         fontSize: "15px",
-        margin: "20px",
+        margin: props.margin || "20px",
       }}
     >
       <label style={{ color: "#223269", fontWeight: "bold" }}>
