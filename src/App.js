@@ -19,9 +19,6 @@ const useStyles = makeStyles({
     backgroundColor: "#223269",
     borderRadius: "0 0 1rem 0",
   },
-  spacer: {
-    flex: 1,
-  },
 });
 
 const MyAppBar = (props) => {
