@@ -30,11 +30,6 @@ const TransactionList = (props) => {
         <TextField label="Member Type" source="member.member_type" />
         <TextField label="Member Subtype" source="member.member_sub_type" />
         <TextField label="Amount" source="amount" />
-        <ShowButton
-          label=""
-          className={classes.button}
-          basePath="/transaction"
-        />
       </Datagrid>
     </List>
   );
