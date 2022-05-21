@@ -1,4 +1,4 @@
-import { List, Datagrid, TextField, TextInput, ShowButton } from "react-admin";
+import { List, Datagrid, TextField, TextInput, DateField } from "react-admin";
 import { globalStyles } from "../Style/globalStyles";
 
 const TransactionFilter = [
@@ -24,7 +24,7 @@ const TransactionList = (props) => {
         }}
       >
         <TextField label="Transaction ID" source="transactionId" />
-        <TextField label="Transaction Date" source="transactionDate" />
+        <DateField showTime label="Transaction Date" source="transactionDate" />
         <TextField label="First Name" source="member.first_name" />
         <TextField label="Last Name" source="member.last_name" />
         <TextField label="Member Type" source="member.member_type" />

@@ -5,6 +5,7 @@ import {
   TextInput,
   ShowButton,
   SelectInput,
+  DateField,
 } from "react-admin";
 import { globalStyles } from "../Style/globalStyles";
 import MemberEdit from "./MemberEdit";
@@ -39,7 +40,8 @@ const MemberList = (props) => {
       >
         <TextField label="ID" source="id" />
         <TextField label="Email" source="primary_email_address" />
-        <TextField label="Created On" source="createdAt" />
+        <TextField label="Username" source="user_name" />
+        <DateField showTime label="Created On" source="createdAt" />
         <TextField label="Status" source="status" />
         <ShowButton label="" className={classes.button} basePath="/member" />
       </Datagrid>

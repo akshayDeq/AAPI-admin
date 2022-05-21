@@ -51,8 +51,8 @@ const AdminList = (props) => {
       >
         <TextField label="ID" source="id" />
         <TextField label="Email" source="email" />
-        <TextField label="Current Sign In" source="current_signin" />
-        <DateField label="Created On" format="dd/MM/yyyy" source="createdAt" />
+        <DateField showTime label="Current Sign In" source="current_signin" />
+        <DateField showTime label="Created On" source="createdAt" />
         <TextField label="Status" source="status" />
       </Datagrid>
     </List>
