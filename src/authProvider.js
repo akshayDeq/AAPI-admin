@@ -20,10 +20,8 @@ const authProvider = {
         return data;
       })
       .then(({ token }) => {
-        const decodedToken = decodeJwt(token);
         localStorage.setItem("Radmin-email", email);
         localStorage.setItem("token", token);
-        localStorage.setItem("role", decodedToken.role);
       });
   },
   checkError: (error) => {
@@ -38,7 +36,8 @@ const authProvider = {
     return Promise.resolve();
   },
   getIdentity: () => {
-    return localStorage.getItem("role");
+    const decodedToken = decodeJwt(localStorage.getItem("token"));
+    return decodedToken.role.toString();
   },
   getPermissions: () => {
     const role = localStorage.getItem("role");
