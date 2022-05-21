@@ -2,14 +2,14 @@ import {
   List,
   Datagrid,
   TextField,
-  EditButton,
   TextInput,
-  ShowButton,
   DateField,
   SelectInput,
 } from "react-admin";
 import { globalStyles } from "../Style/globalStyles";
 import { useState, useEffect } from "react";
+import AdminEdit from "./AdminEdit";
+import authProvider from "../authProvider";
 
 const AdminFilter = [
   <TextInput label="Search" source="q" alwaysOn />,
@@ -25,7 +25,7 @@ const AdminFilter = [
 
 const AdminList = (props) => {
   const classes = globalStyles();
-  const [userRole] = useState(localStorage.getItem("role"));
+  const [userRole] = useState(authProvider.getIdentity());
   const [takeBulkActions, setTakeBulkActions] = useState(false);
 
   useEffect(() => {
@@ -44,6 +44,7 @@ const AdminList = (props) => {
       bulkActionButtons={takeBulkActions}
     >
       <Datagrid
+        expand={takeBulkActions ? <AdminEdit /> : ""}
         classes={{
           headerCell: classes.headerCell,
         }}
@@ -51,29 +52,8 @@ const AdminList = (props) => {
         <TextField label="ID" source="id" />
         <TextField label="Email" source="email" />
         <TextField label="Current Sign In" source="current_signin" />
-        {/* <TextField label="Sign In Count" source="signin_count" /> */}
         <DateField label="Created On" format="dd/MM/yyyy" source="createdAt" />
         <TextField label="Status" source="status" />
-        {userRole === "super-admin" ? (
-          <EditButton
-            width="10%"
-            label=""
-            className={classes.button}
-            basePath="/admin"
-          />
-        ) : (
-          <></>
-        )}
-        {userRole === "super-admin" ? (
-          <ShowButton
-            width="5%"
-            label=""
-            className={classes.button}
-            basePath="/admin"
-          />
-        ) : (
-          <></>
-        )}
       </Datagrid>
     </List>
   );

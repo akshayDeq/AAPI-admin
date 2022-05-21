@@ -4,10 +4,10 @@ import {
   TextField,
   TextInput,
   ShowButton,
-  EditButton,
   SelectInput,
 } from "react-admin";
 import { globalStyles } from "../Style/globalStyles";
+import MemberEdit from "./MemberEdit";
 
 const MemberFilter = [
   <TextInput label="Search" source="q" alwaysOn />,
@@ -28,10 +28,11 @@ const MemberList = (props) => {
     <List
       className={classes.tableMargin}
       {...props}
-      bulkActionButtons={false}
+      bulkActionButtons={true}
       filters={MemberFilter}
     >
       <Datagrid
+        expand={<MemberEdit />}
         classes={{
           headerCell: classes.headerCell,
         }}
@@ -40,7 +41,6 @@ const MemberList = (props) => {
         <TextField label="Email" source="primary_email_address" />
         <TextField label="Created On" source="createdAt" />
         <TextField label="Status" source="status" />
-        <EditButton label="" className={classes.button} basePath="/member" />
         <ShowButton label="" className={classes.button} basePath="/member" />
       </Datagrid>
     </List>
