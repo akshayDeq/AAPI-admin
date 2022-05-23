@@ -14,6 +14,7 @@ const MemberFilter = [
   <TextInput label="Search" source="q" alwaysOn />,
   <TextInput autoComplete="off" label="ID" source="id" />,
   <TextInput autoComplete="off" label="Email" source="email" />,
+  <TextInput label="Username" source="userName" />,
   <SelectInput
     label="Status"
     source="status"
@@ -40,7 +41,7 @@ const MemberList = (props) => {
       >
         <TextField label="ID" source="id" />
         <TextField label="Email" source="primary_email_address" />
-        <TextField label="Username" source="user_name" />
+        <TextField label="Username" source="username" />
         <DateField showTime label="Created On" source="createdAt" />
         <TextField label="Status" source="status" />
         <ShowButton label="" className={classes.button} basePath="/member" />

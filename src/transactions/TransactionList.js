@@ -4,7 +4,7 @@ import { globalStyles } from "../Style/globalStyles";
 const TransactionFilter = [
   <TextInput label="Search" source="q" alwaysOn />,
   <TextInput label="Transaction ID" source="transactionId" />,
-  <TextInput label="First Name" source="name" />,
+  <TextInput label="Username" source="userName" />,
   <TextInput type={"number"} label="Amount" source="amount" />,
 ];
 
@@ -25,8 +25,7 @@ const TransactionList = (props) => {
       >
         <TextField label="Transaction ID" source="transactionId" />
         <DateField showTime label="Transaction Date" source="transactionDate" />
-        <TextField label="First Name" source="member.first_name" />
-        <TextField label="Last Name" source="member.last_name" />
+        <TextField label="Username" source="member.username" />
         <TextField label="Member Type" source="member.member_type" />
         <TextField label="Member Subtype" source="member.member_sub_type" />
         <TextField label="Amount" source="amount" />
